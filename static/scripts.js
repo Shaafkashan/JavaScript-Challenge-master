@@ -22,6 +22,10 @@ async function fetchStocks() {
   return stockSymbols;
 }
 
+async function fetchStockData(stockSymbol) {
+  const response = await fetch(`/stocks/${stockSymbol}`);
+  return response.json();
+}
 
 drawLine([50, 50], [50, 550])
 drawTriangle([35, 50], [65, 50], [50, 35])
