@@ -16,6 +16,12 @@ function drawTriangle (apex1, apex2, apex3) {
   ctx.lineTo(...apex3)
   ctx.fill()
 }
+async function fetchStocks() {
+  const response = await fetch('/stocks');
+  const { stockSymbols } = await response.json();
+  return stockSymbols;
+}
+
 
 drawLine([50, 50], [50, 550])
 drawTriangle([35, 50], [65, 50], [50, 35])
