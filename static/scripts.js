@@ -27,6 +27,24 @@ async function fetchStockData(stockSymbol) {
   return response.json();
 }
 
+
+
+async function loadData() {
+  const spinner = document.querySelector('.spinner');
+  try {
+    const stocks = await fetchStocks();
+    const promises = stocks.map(stock => fetchStockData(stock));
+    const results = await Promise.all(promises);
+    console.log(results);
+  } catch (error) {
+    console.error('Error fetching stock data:', error);
+  } finally {
+    spinner.style.display = 'none';
+  }
+}
+
+loadData();
+
 drawLine([50, 50], [50, 550])
 drawTriangle([35, 50], [65, 50], [50, 35])
 
