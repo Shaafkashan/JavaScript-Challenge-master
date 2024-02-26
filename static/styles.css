@@ -1,15 +1,16 @@
 @keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.spinner{
+.spinner {
   font-size: 140px;
+  animation: rotate 1s linear infinite;
 }
-.spinner:after {
+
+.spinner::after{
   content: '◌';
-  animation: rotate 2s linear infinite;}
+}
 
 #chart {
     border: 1px solid black;
