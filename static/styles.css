@@ -1,9 +1,11 @@
+/* step 1 create key frames which will rotate the spinner */
 @keyframes rotate {
   0% { transform: rotate(0deg); }
   50% { transform: rotate(180deg); }
   100% { transform: rotate(3600deg); }
 }
 
+/* step 2 add the animation to the spinner span element to allow the spinner to rotate */
 .spinner {
   font-size: 140px;
   animation: rotate 1s linear infinite;
